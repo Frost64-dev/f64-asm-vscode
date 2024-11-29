@@ -1,0 +1,145 @@
+{
+    "scopeName": "source.asm",
+    "patterns": [
+        {
+            "include": "#comments"
+        },
+        {
+            "include": "#directives"
+        },
+        {
+            "include": "#instructions"
+        },
+        {
+            "include": "#registers"
+        },
+        {
+            "include": "#literals"
+        },
+        {
+            "include": "#labels"
+        },
+        {
+            "include": "#sublabels"
+        },
+        {
+            "include": "#label-reference"
+        },
+        {
+            "include": "#sublabel-reference"
+        },
+        {
+            "include": "#operand-size"
+        },
+        {
+            "include": "#includes"
+        },
+        {
+            "include": "#strings"
+        }
+    ],
+    "repository": {
+        "comments": {
+            "patterns": [
+                {
+                    "name": "comment.line.semicolon.asm",
+                    "match": ";.*$"
+                },
+                {
+                    "name": "comment.block.asm",
+                    "begin": "/\\*",
+                    "end": "\\*/"
+                }
+            ]
+        },
+        "directives": {
+            "patterns": [
+                {
+                    "name": "keyword.control.directive.asm",
+                    "match": "\\b(?:db|dw|dd|dq|org)\\b"
+                }
+            ]
+        },
+        "instructions": {
+            "patterns": [
+                {
+                    "name": "keyword.control.instruction.asm",
+                    "match": "\\b(?:push|pop|pusha|popa|add|mul|sub|div|or|xor|nor|and|nand|not|cmp|inc|dec|shl|shr|ret|call|jmp|jc|jnc|jz|jnz|int|lidt|iret|mov|nop|hlt|syscall|sysret|enteruse)\\b"
+                }
+            ]
+        },
+        "registers": {
+            "patterns": [
+                {
+                    "name": "variable.other.register.asm",
+                    "match": "\\b(?:r[0-9]+|sbp|scp|stp|ip|sts|cr[0-7]+)\\b"
+                }
+            ]
+        },
+        "literals": {
+            "patterns": [
+                {
+                    "name": "constant.numeric.literal.asm",
+                    "match": "\\b(?:0x[0-9a-fA-F]+|0b[01]+|0o[0-7]+|\\d+)\\b"
+                }
+            ]
+        },
+        "labels": {
+            "patterns": [
+                {
+                    "name": "entity.name.label.asm",
+                    "match": "\\b[a-zA-Z_][a-zA-Z_0-9]*:"
+                }
+            ]
+        },
+        "sublabels": {
+            "patterns": [
+            {
+                "name": "entity.name.label.sublabel.asm",
+                "match": "\\b\\.[a-zA-Z_][a-zA-Z_0-9]*:"
+            }
+            ]
+        },
+        "label-reference": {
+            "patterns": [
+                {
+                    "name": "entity.name.label.reference.asm",
+                    "match": "\\b[a-zA-Z_][a-zA-Z_0-9]*\\b"
+                }
+            ]
+        },
+        "sublabel-reference": {
+            "patterns": [
+                {
+                    "name": "entity.name.label.sublabel.reference.asm",
+                    "match": "\\b\\.[a-zA-Z_][a-zA-Z_0-9]*\\b"
+                }
+            ]
+        },
+        "operand-size": {
+            "patterns": [
+                {
+                    "name": "keyword.other.operand-size.asm",
+                    "match": "\\b(?:byte|word|dword|qword)\\b"
+                }
+            ]
+        },
+        "includes": {
+            "patterns": [
+                {
+                    "name": "keyword.control.include.asm",
+                    "match": "\\b%include\\b"
+                }
+            ]
+        },
+        "strings": {
+            "patterns": [
+                {
+                    "name": "string.quoted.double.asm",
+                    "begin": "\"",
+                    "end": "\""
+                }
+            ]
+        }
+    }
+}

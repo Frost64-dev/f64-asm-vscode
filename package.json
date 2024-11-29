@@ -1,0 +1,25 @@
+{
+  "name": "frost64-assembly-support",
+  "displayName": "Frost64 Assembly Support",
+  "description": "Support for Frost64 assembly language",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.95.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "frost64",
+      "aliases": ["Frost64 Assembly", "frost64"],
+      "extensions": [".asm",".inc"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "frost64",
+      "scopeName": "source.asm",
+      "path": "./syntaxes/frost64.tmLanguage.json"
+    }]
+  }
+}
