@@ -36,6 +36,12 @@
         },
         {
             "include": "#strings"
+        },
+        {
+            "include": "#character-literals"
+        },
+        {
+            "include": "#escape-sequences"
         }
     ],
     "repository": {
@@ -64,7 +70,7 @@
             "patterns": [
                 {
                     "name": "keyword.control.instruction.asm",
-                    "match": "\\b(?:push|pop|pusha|popa|add|mul|sub|div|or|xor|nor|and|nand|not|cmp|inc|dec|shl|shr|ret|call|jmp|jc|jnc|jz|jnz|int|lidt|iret|mov|nop|hlt|syscall|sysret|enteruse)\\b"
+                    "match": "\\b(?:push|pop|pusha|popa|add|mul|sub|div|or|xor|nor|and|nand|not|cmp|inc|dec|shl|shr|ret|call|jmp|jc|jnc|jz|jnz|jl|jle|jnl|jnle|jg|jge|jng|jnge|int|lidt|iret|mov|nop|hlt|syscall|sysret|enteruse)\\b"
                 }
             ]
         },
@@ -137,7 +143,34 @@
                 {
                     "name": "string.quoted.double.asm",
                     "begin": "\"",
-                    "end": "\""
+                    "end": "\"",
+                    "patterns": [
+                        {
+                            "include": "#escape-sequences"
+                        }
+                    ]
+                }
+            ]
+        },
+        "character-literals": {
+            "patterns": [
+                {
+                    "name": "string.quoted.single.asm",
+                    "begin": "'",
+                    "end": "'",
+                    "patterns": [
+                        {
+                            "include": "#escape-sequences"
+                        }
+                    ]
+                }
+            ]
+        },
+        "escape-sequences": {
+            "patterns": [
+                {
+                    "name": "constant.character.escape.asm",
+                    "match": "\\\\."
                 }
             ]
         }
