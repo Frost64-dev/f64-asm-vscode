@@ -3,7 +3,7 @@
 	"displayName": "Frost64 Assembly Support",
 	"description": "Support for Frost64 assembly language",
 	"publisher": "Frosty515",
-	"version": "0.0.2",
+	"version": "0.0.3",
 	"engines": {
 		"vscode": "^1.95.0"
 	},
@@ -33,7 +33,8 @@
 			}
 		]
 	},
-	"__metadata": {
-		"size": 102511
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/Frost64-dev/f64-asm-vscode"
 	}
 }

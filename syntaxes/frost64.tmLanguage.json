@@ -62,7 +62,7 @@
             "patterns": [
                 {
                     "name": "keyword.control.directive.asm",
-                    "match": "\\b(?:db|dw|dd|dq|org)\\b"
+                    "match": "\\b(?:db|dw|dd|dq|org|ascii|asciiz)\\b"
                 }
             ]
         },
